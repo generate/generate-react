@@ -1,0 +1,30 @@
+{
+  "name": "generate-react",
+  "description": "Generate generator for creating React applications, components, and related React resources.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/generate/generate-react",
+  "author": "Yash Pandit (https://github.com/yashpandit)",
+  "repository": "generate/generate-react",
+  "bugs": {
+    "url": "https://github.com/generate/generate-react/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "generator.js",
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "is-valid-app": "^0.3.0"
+  },
+  "keywords": [
+    "generate",
+    "react"
+  ]
+}
