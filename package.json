@@ -1,5 +1,5 @@
 {
-  "name": "generate-react",
+  "name": "@generate/react",
   "description": "Generate generator for creating React applications, components, and related React resources.",
   "version": "0.1.0",
   "homepage": "https://github.com/generate/generate-react",
@@ -26,5 +26,29 @@
   "keywords": [
     "generate",
     "react"
-  ]
+  ],
+  "devDependencies": {
+    "gulp-format-md": "^2.0.0"
+  },
+  "verb": {
+    "toc": false,
+    "layout": "generator",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": []
+    },
+    "reflinks": [
+      "assemble",
+      "base",
+      "gulp"
+    ]
+  }
 }
