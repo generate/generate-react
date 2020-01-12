@@ -21,7 +21,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-valid-app": "^0.3.0"
+    "is-valid-app": "^0.3.0",
+    "enquirer": "^2.3.2",
+    "generate": "^0.14.0",
+    "generate-project": "^1.0.0"
   },
   "keywords": [
     "generate",
