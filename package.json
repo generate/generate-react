@@ -21,13 +21,16 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-valid-app": "^0.3.0"
+    "is-valid-app": "^0.3.0",
+    "enquirer": "^2.3.2",
+    "generate-project": "^1.0.0"
   },
   "keywords": [
     "generate",
     "react"
   ],
   "devDependencies": {
+    "generate": "^0.14.0",
     "gulp-format-md": "^2.0.0"
   },
   "verb": {
