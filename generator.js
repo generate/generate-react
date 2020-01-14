@@ -8,10 +8,7 @@ module.exports = app => {
   if (!isValid(app, 'generate-react')) return;
 
   app.use(require('generate-project'));
-  app.register(
-    'create-react-app',
-    require('./lib/generators/create-react-app')
-  );
+  app.register('create-react-app', require('./lib/generators/create-react-app'));
 
   /**
    * Generate a `index.js` file to the current working directory. Learn how to [customize
