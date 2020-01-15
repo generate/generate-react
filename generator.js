@@ -3,9 +3,13 @@
 var path = require('path');
 var isValid = require('is-valid-app');
 
-module.exports = function(app) {
+module.exports = app => {
   // return if the generator is already registered
   if (!isValid(app, 'generate-react')) return;
+
+  app.use(require('generate-project'));
+  app.register('create-react-app', require('./lib/generators/create-react-app'));
+  app.register('custom-test', require('./lib/generators/custom-tests'));
 
   /**
    * Generate a `index.js` file to the current working directory. Learn how to [customize
@@ -18,8 +22,6 @@ module.exports = function(app) {
    * @api public
    */
 
-  task(app, 'react', 'index.js');
-
   /**
    * Alias for running the [react](#react) task with the following command:
    *
@@ -30,18 +32,19 @@ module.exports = function(app) {
    * @api public
    */
 
-  app.task('default', ['react']);
+  app.task('default', ['project']);
 };
 
 /**
  * Create a task with the given `name` and glob `pattern`
  */
 
-function task(app, name, pattern) {
-  app.task(name, function() {
-    return app.src(pattern, {cwd: __dirname})
+function task(app, name, pattern, dest = '') {
+  app.task(name, () => {
+    return app
+      .src(pattern, { cwd: __dirname })
       .pipe(app.renderFile('*'))
       .pipe(app.conflicts(app.cwd))
-      .pipe(app.dest(app.cwd));
+      .pipe(app.dest(path.join(app.cwd, dest)));
   });
 }
