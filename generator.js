@@ -9,6 +9,7 @@ module.exports = app => {
 
   app.use(require('generate-project'));
   app.register('create-react-app', require('./lib/generators/create-react-app'));
+  app.register('custom-test', require('./lib/generators/custom-tests'));
 
   /**
    * Generate a `index.js` file to the current working directory. Learn how to [customize
